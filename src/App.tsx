@@ -8,7 +8,11 @@ import Dashboard from "./pages/Dashboard";
 import Bundles from "./pages/Bundles";
 import CreateBundle from "./pages/CreateBundle";
 import Cart from "./pages/Cart";
+import Analytics from "./pages/Analytics";
+import Customers from "./pages/Customers";
+import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
+import { Store } from "lucide-react";
 
 const queryClient = new QueryClient();
 
@@ -24,10 +28,10 @@ const App = () => (
             <Route path="/bundles" element={<Bundles />} />
             <Route path="/create-bundle" element={<CreateBundle />} />
             <Route path="/cart" element={<Cart />} />
-            <Route path="/storefront" element={<div>Storefront coming soon...</div>} />
-            <Route path="/analytics" element={<div>Analytics coming soon...</div>} />
-            <Route path="/customers" element={<div>Customers coming soon...</div>} />
-            <Route path="/settings" element={<div>Settings coming soon...</div>} />
+            <Route path="/storefront" element={<div className="text-center py-12"><Store className="w-16 h-16 mx-auto text-muted-foreground mb-4" /><h2 className="text-xl font-semibold mb-2">Storefront</h2><p className="text-muted-foreground">Storefront management coming soon...</p></div>} />
+            <Route path="/analytics" element={<Analytics />} />
+            <Route path="/customers" element={<Customers />} />
+            <Route path="/settings" element={<Settings />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
